@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.basi.test.MainActivity">
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/layout_search"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:animateLayoutChanges="true"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:paddingBottom="20dp"-->
+        <!--android:paddingLeft="@dimen/activity_vertical_margin"-->
+        <!--android:paddingRight="@dimen/activity_vertical_margin"-->
+        <!--android:paddingTop="10dp">-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+            <!--android:src="@android:drawable/ic_search_category_default"-->
+            <!--android:visibility="gone"-->
+            <!--tools:visibility="visible" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/edit_text_username"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toLeftOf="@id/button_search"-->
+            <!--android:hint="@string/hit_username"-->
+            <!--android:imeOptions="actionSearch"-->
+            <!--android:inputType="text"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:theme="@style/LightEditText" />-->
+
+    <!--</RelativeLayout>-->
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/pb_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal">
+
+        </ProgressBar>
+
+
+    </FrameLayout>
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+    <!--android:id="@+id/navigation"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:background="?android:attr/windowBackground"-->
+    <!--app:menu="@menu/navigation" />-->
+
+</LinearLayout><!--</android.support.design.widget.CoordinatorLayout>-->

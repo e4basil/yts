@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+    defaultConfig {
+        applicationId "com.example.basi.test"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    Map<String, String> dependencies = rootProject.ext.dependencies;
+
+    compile dependencies.appCompat
+    compile dependencies.appCompatDesign
+    compile dependencies.cardView
+    compile dependencies.recyclerView
+    compile dependencies.retrofit
+    compile dependencies.retrofitConverterGson
+    compile dependencies.retrofitAdapterRxJava
+//    compile dependencies.picasso
+//    compile dependencies.rxAndroid
+//    compile dependencies.rxJava
+//    compile dependencies.rxAndroid2
+//    compile dependencies.rxJava2
+    compile dependencies.butterknife
+//    compile dependencies.circleImageView
+
+    testCompile dependencies.jUnit
+    testCompile dependencies.mockito
+    testCompile dependencies.robolectric
+
+    annotationProcessor dependencies.butterknifeAnnotationProcessor
+
+
+    compile('com.github.ihsanbal:LoggingInterceptor:2.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    
+}
